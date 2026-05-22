@@ -1,38 +1,172 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
 
-  <!-- iOS meta tags & icons -->
+  <!-- SEO -->
+  <meta
+    name="description"
+    content="Business Booster - Premium Business Growth Platform"
+  />
+
+  <!-- MOBILE -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="database">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Business Booster">
 
-  <!-- Favicon -->
+  <!-- THEME -->
+  <meta name="theme-color" content="#111111">
+
+  <!-- ICONS -->
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>database</title>
+  <!-- TITLE -->
+  <title>Business Booster</title>
+
+  <!-- MANIFEST -->
   <link rel="manifest" href="manifest.json">
+
+  <!-- PREMIUM FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- PREMIUM LOADER STYLE -->
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background: linear-gradient(
+        135deg,
+        #111111,
+        #1E1E1E
+      );
+
+      height:100vh;
+      width:100vw;
+
+      overflow:hidden;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      font-family: Arial, sans-serif;
+    }
+
+    .loader-container{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* PREMIUM RING */
+    .ring{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      position:relative;
+
+      border:6px solid rgba(255,255,255,0.08);
+      border-top:6px solid #FFC107;
+
+      animation:spin 1.2s linear infinite;
+
+      box-shadow:
+        0 0 25px rgba(255,193,7,0.35),
+        inset 0 0 15px rgba(255,193,7,0.15);
+    }
+
+    .ring::before{
+      content:'';
+      position:absolute;
+      inset:12px;
+
+      border-radius:50%;
+      border:4px solid rgba(255,193,7,0.15);
+    }
+
+    /* LOGO TEXT */
+    .logo-text{
+      margin-top:28px;
+
+      color:#FFC107;
+
+      font-size:28px;
+      font-weight:bold;
+
+      letter-spacing:1px;
+
+      text-shadow:
+        0 0 10px rgba(255,193,7,0.4);
+    }
+
+    .sub-text{
+      margin-top:10px;
+
+      color:rgba(255,255,255,0.7);
+
+      font-size:14px;
+
+      letter-spacing:0.5px;
+    }
+
+    @keyframes spin{
+      0%{
+        transform:rotate(0deg);
+      }
+      100%{
+        transform:rotate(360deg);
+      }
+    }
+
+    /* SMOOTH FADE */
+    .loader-container{
+      animation:fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(10px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+  </style>
+
 </head>
+
 <body>
+
+  <!-- PREMIUM LOADER -->
+  <div class="loader-container">
+
+    <div class="ring"></div>
+
+    <div class="logo-text">
+      Business Booster
+    </div>
+
+    <div class="sub-text">
+      Loading Premium Experience...
+    </div>
+
+  </div>
+
+  <!-- FLUTTER -->
   <script src="flutter_bootstrap.js" async></script>
+
 </body>
 </html>
